@@ -7,3 +7,8 @@ Pero en particular a Mistborn, que fue la primera saga que lei del autor. Tambie
 ## Pruebala herrumbres
 Ademas viene con la documentacion en la pagina 
 URL ---> 
+
+## 💁‍♀️ How to use
+
+- Install Python requirements `pip install -r requirements.txt`
+- Start the server for development `python3 app.py`
