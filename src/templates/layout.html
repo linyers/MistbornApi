@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/main.css">
+    {% if title %}
+    <link rel="stylesheet" href="/static/css/about.css">
+    <title>{{title}}</title>
+    {% else %}
+    <title>The Mistborn API</title>
+    {% endif %}
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="/">
+                <img src="/static/img/Ettmetal.webp" title="inicio">
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-link">
+                <li><a href="/documentation">Docs</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %} {% endblock %}
+    </main>
+    </div>
+    <footer>
+        <ul>
+            <li><a href="/api/v1.0/characters">CHARACTERS {{ num_char }}</a></li>
+            <li><a href="/api/v1.0/locations">LOCATIONS 0 (WIP)</a></li>
+            <li><a href="/api/v1.0/magic">MAGIC 0 (WIP)</a></li>
+        </ul>
+        <div class="redes">
+            <span>
+                ❮❯ by
+                <a href="https://github.com/linyers66" target="_blank">Linyers66 </a>
+            </span>
+            <span> 2023</span>
+        </div>
+    </footer>
+</body>
+
+</html>

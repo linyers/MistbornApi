@@ -1,0 +1,180 @@
+{% extends 'layout.html' %} {% block content%}
+<h1>Documentación</h1>
+<div class="container">
+    <h3>Introduccion</h3>
+    <p>
+        Esta documentación te ayudara a familiarizarte con The Mistborn API, para hacer las diferentes consultas y
+        sacarle el mayor provecho
+    </p>
+</div>
+
+<div id="divide" class="container">
+    <h3>REST</h3>
+    <p><strong>Base: </strong><a href="/api">/api</a></p>
+    <p>En la url base estan todos los recursos disponibles actualmente de la API. Todas las solicitudes son GET y
+        retornan los datos en formato JSON</p>
+    <p>Actualmente hay 3 recursos disponibles:</p>
+    <ul>
+        <li>
+            <p><a href="/api/v1.0/characters">Characters</a>: Usalo para obtener a todos los personajes</p>
+        </li>
+        <li>
+            <p><a href="/api/v1.0/locations">Locations</a>: Usalo para obtener a todas las ubicaciones</p>
+        </li>
+        <li>
+            <p><a href="/api/v1.0/magic">Magic</a>: Usalo para obtener a todo tipo de magia</p>
+        </li>
+    </ul>
+</div>
+<div id="character">
+    <div class="container">
+        <h3>Character</h3>
+        <p>Actualmente hay {{num_char}} personajes</p>
+    </div>
+    <div class="container">
+        <h3>Character Schema</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Key</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>_id</td>
+                    <td>int</td>
+                    <td>El id del personaje.</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>string</td>
+                    <td>El nombre del personaje.</td>
+                </tr>
+                <tr>
+                    <td>aliases</td>
+                    <td>array</td>
+                    <td>Los alias del personaje, si llegase a tenerlo.</td>
+                </tr>
+                <tr>
+                    <td>family</td>
+                    <td>object</td>
+                    <td>Los miembros de la familia del personaje, puede tener spouse, parents, siblings, relatives,
+                        children, descendants y ancestors. Todos arrays.</td>
+                </tr>
+                <tr>
+                    <td>born</td>
+                    <td>object</td>
+                    <td>El año y la epoca de nacimiento del personaje.</td>
+                </tr>
+                <tr>
+                    <td>died</td>
+                    <td>object</td>
+                    <td>El año y la epoca de la muerte del personaje.</td>
+                </tr>
+                <tr>
+                    <td>abilities</td>
+                    <td>array</td>
+                    <td>Las abilidades del personaje.</td>
+                </tr>
+                <tr>
+                    <td>profession</td>
+                    <td>array</td>
+                    <td>Las profesiones del personaje.</td>
+                </tr>
+                <tr>
+                    <td>religion</td>
+                    <td>string</td>
+                    <td>La religion a la que pertenece el personaje.</td>
+                </tr>
+                <tr>
+                    <td>titles</td>
+                    <td>array</td>
+                    <td>Los diferentes titulos que se gano el personaje.</td>
+                </tr>
+                <tr>
+                    <td>groups</td>
+                    <td>array</td>
+                    <td>Los grupos a los cuales pertenece el personaje.</td>
+                </tr>
+                <tr>
+                    <td>birthplace</td>
+                    <td>string</td>
+                    <td>Lugar de nacimiento del personaje.</td>
+                </tr>
+                <tr>
+                    <td>residence</td>
+                    <td>string</td>
+                    <td>Lugar de residencia del personaje.</td>
+                </tr>
+                <tr>
+                    <td>ethnicity</td>
+                    <td>string</td>
+                    <td>La etnia o especie del personaje.</td>
+                </tr>
+                <tr>
+                    <td>featured_in</td>
+                    <td>array</td>
+                    <td>Los libros o sagas en las que el personaje hizo aparicion.</td>
+                </tr>
+                <tr>
+                    <td>image</td>
+                    <td>string (url)</td>
+                    <td>Una imagen del personaje.</td>
+                </tr>
+                <tr>
+                    <td>world</td>
+                    <td>string</td>
+                    <td>Mundo de donde proviene el personaje.</td>
+                </tr>
+                <tr>
+                    <td>coppermind</td>
+                    <td>string (url)</td>
+                    <td>Enlace a la wiki oficial del personaje.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container char">
+        <h3>Obten todos los personajes</h3>
+        <p>Para obtener a todos se usa:</p>
+        <div class="box-text">
+            <p>/v1.0/characters</p>
+        </div>
+    </div>
+    <div class="container char">
+        <h3>Obten solo un personaje</h3>
+        <p>Para obtener a solo uno se necesita solo el id como parametro:</p>
+        <div class="box-text">
+            <p>/v1.0/characters/1</p>
+        </div>
+    </div>
+    <div class="container char">
+        <h3>Obten varios personajes</h3>
+        <p>Para obtener a varios se necesita el id de los personajes como parametro separados por comas ",":</p>
+        <div class="box-text">
+            <p>/v1.0/characters/1,2,3</p>
+        </div>
+    </div>
+    <div class="container filtrar">
+        <h3>Filtrar personajes</h3>
+        <p>
+            Tambien se pueden filtrar mediante la URL para incluir mas parametros. Para empezar a filtrar introduce 
+            <code class="box-text">?</code> seguido por la consulta, por ejemplo: <code class="box-text">characters/?name=wax</code>. Ademas puede encadenar varias consultas 
+            en la misma llamada usando <code class="box-text">&</code>.
+        </p>
+        <p>
+            Por ejemplo para saber cuantos kandras son seguidores del supervivencialismo seria: <code class="box-text">characters/?ethn=kandra&relig=survivorism</code>
+        </p>
+        <p>
+            Los filtros que se pueden aplicar son:
+        </p>
+        <ul>
+            <li><p><code class="box-text">name</code>: Para filtrar por el nombre.</p></li>
+            <li><p><code class="box-text">ethn</code>: Para filtrar por la etnia.</p></li>
+            <li><p><code class="box-text">relig</code>: Para filtrar por la religion.</p></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

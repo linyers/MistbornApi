@@ -1,0 +1,38 @@
+{% extends 'layout.html' %} {% block content%}
+    <div id="inicio">
+        <div class="images">
+            <div class="leras">
+                <img src="/static/img/Lerasium.webp" class="leras">
+            </div>
+            <div class="ett">
+                <img src="/static/img/Ettmetal.webp">
+            </div>
+            <div class="ati">
+                <img src="/static/img/Atium.webp">
+            </div>
+        </div>
+        <h1>The Mistborn API</h1>
+    </div>
+    <div id="examples">
+        {% for dato in datos %}
+        <div class="container card">
+            <div>
+                <img src="{{ dato.get('image') }}">
+            </div>
+            <div class="datos">
+                <a href="{{ dato.get('url_name') }}" target="_blank">
+                    <h2>{{ dato.get('name') }}</h2>
+                </a>
+                <div class="desc">
+                    <span>Featured in:</span>
+                    <p>{{ dato.get('featured') }}</p>
+                </div>
+                <div class="desc">
+                    <span>Abilities:</span>
+                    <p>{{ dato.get('abilities') }}</p>
+                </div>
+                <a href="{{ dato.get('coppermind') }}" class="coppermind" target="_blank">Coppermind</a>
+            </div>
+        </div>
+        {% endfor %}
+{% endblock %}

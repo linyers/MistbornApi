@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 18px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #eeeeee;
+}
+
+.header {
+    background-color: #303841;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+    padding: 1.8rem 6rem;
+}
+
+.header .logo img{
+    height: 2.5rem;
+    width: auto;
+}
+
+.header .nav-link{
+    list-style: none;
+}
+
+.header .nav-link a{
+    text-decoration: none;
+    color: #7aa5d2;
+}
+
+.header .nav-link a:hover{
+    color: #eeeeee;
+}
+
+.header .nav-link li{
+    display: inline-block;
+    padding: 0 1rem;
+    margin-left: 1rem;
+}
+
+#inicio {
+    background-color: #eeeeee;
+}
+
+h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    font-size: 6rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    top: 10%;
+    left: 20%;
+    color: #303841;
+}
+
+.images{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    filter: invert(100%) sepia(1%) saturate(1039%) hue-rotate(184deg) brightness(116%) contrast(76%);}
+
+.images .ett img{
+    padding-left: 7.5rem;
+    float: none;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+.images .ati img{
+    float: right;
+    max-width: 60%;
+    height: auto;
+}
+.images .leras img{
+    float: left;
+    max-width: 65%;
+    height: auto;
+}
+
+
+#examples {
+    background-color: #303841;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1920px;
+}
+
+.card {
+    width: 30rem;
+    height: 12rem;
+    display: flex;
+    overflow: hidden;
+    background: #47555e;
+    border-radius: 0.5rem;
+    margin: 0.75rem;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.card img{
+    width: 240px;
+    height: 240px;
+    margin: 0px;
+    object-position: center center;
+}
+
+.card .datos {
+    flex: 3 1 0%;
+    position: relative;
+    padding-left: 0.75rem;
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+}
+
+.card .datos .desc {
+    margin-bottom: 0.35rem;
+}
+
+.card .datos a{
+    text-decoration: none;
+    color: #7aa5d2;
+}
+
+.card .datos h2{
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    transition: all 0.2s;
+}
+
+.card .datos h2:hover{
+    color:#eeeeee;
+}
+
+.card .datos span{
+    font-size: 0.90rem;
+    color: rgb(179, 179, 179);
+}
+
+.card .datos .coppermind{
+    transition: all 0.2s;
+}
+
+.card .datos .coppermind:hover{
+    color: #ff8d2c;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column ;
+    position: relative;
+    padding: 2.5rem 0px;
+    width: 100%;
+    background-color: #47555e;
+}
+
+footer ul{
+    display: flex;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 0.7rem;
+}
+
+footer ul li + li {
+    margin-left: 1.5rem;
+}
+
+footer li a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.2s;
+}
+
+footer li a:hover{
+    color: #303841;
+}
+
+footer .redes{
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+}
+
+footer .redes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row;
+    position: relative;
+}
+
+
+footer span a{
+    text-decoration: none;
+    color: black;
+    background: rgb(11,36,71);
+    background: radial-gradient(circle, rgba(11,36,71,1) 47%, rgba(25,55,109,1) 78%, rgba(87,108,188,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding: 0 0.2rem;
+}
+
+footer span a:hover{
+    color: transparent;
+    transition: 500ms ease;
+}
