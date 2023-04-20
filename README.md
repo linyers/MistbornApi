@@ -11,4 +11,4 @@ URL --->
 ## 💁‍♀️ How to use
 
 - Install Python requirements `pip install -r requirements.txt`
-- Start the server for development `python3 app.py`
+- Start the server for development `python3 src/app.py`
