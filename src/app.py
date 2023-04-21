@@ -33,8 +33,7 @@ def character_id(_id):
         _id = list(map(int, _id))
         character = db.characters.find({'_id':{"$in":_id}})
     else:
-        _id = list(map(int, _id))
-        character = db.characters.find({'_id':_id})
+        character = db.characters.find({'_id':int(_id)})
     return Response(dumps(character), mimetype='application/json')
 
 @app.route('/api/v1.0/characters/', methods = ['GET'])
@@ -118,8 +117,9 @@ def main():
     result = db.characters.aggregate(pipeline)
     datos = list()
     for doc in result:
+        _id = doc["_id"]
         name = doc["name"]
-        url_name = "/api/v1.0/characters/" + name
+        url_name = "/api/v1.0/characters/" + _id
         featured = ", ".join(doc["featured_in"][:3])
         abilities = "Any"
         if len(doc["featured_in"]) > 3:
