@@ -8,6 +8,7 @@
     font-family: 'PT Sans', sans-serif;
     font-size: 18px;
     scroll-behavior: smooth;
+    transition: all 0.2s;
 }
 
 body {
@@ -21,15 +22,18 @@ body {
     justify-content: space-between;
     height: 50px;
     width: 100%;
+    padding-left: 1rem;
     padding: 1.8rem 6rem;
 }
 
 .header .logo img{
+    margin-right: 10rem;
     height: 2.5rem;
     width: auto;
 }
 
 .header .nav-link{
+    margin-right: 0rem;
     list-style: none;
 }
 
@@ -44,25 +48,29 @@ body {
 
 .header .nav-link li{
     display: inline-block;
-    padding: 0 1rem;
-    margin-left: 1rem;
+    padding: 0 0.3rem;
+    margin-left: 0;
 }
 
 #inicio {
     background-color: #eeeeee;
 }
 
-h1 {
+#inicio {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    font-size: 6rem;
-    margin-top: 3rem;
-    margin-bottom: 2rem;
-    top: 10%;
-    left: 20%;
+}
+
+.center{
+    position: absolute;    /* para poder posicionar el texto de forma absoluta */
+
+}
+
+h1 {
+    display: inline-block;
+    font-size: 6em;
     color: #303841;
 }
 
@@ -70,23 +78,25 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    position: relative;
     filter: invert(100%) sepia(1%) saturate(1039%) hue-rotate(184deg) brightness(116%) contrast(76%);}
 
 .images .ett img{
-    padding-left: 7.5rem;
+    padding-right: calc(1em + 1vw);
+    padding-left: calc(4em + 4vw);
     float: none;
     margin: 0 auto;
-    max-width: 100%;
+    max-width: calc(5em + 30vw);
     height: auto;
 }
 .images .ati img{
     float: right;
-    max-width: 60%;
+    max-width: calc(0em + 60%);
     height: auto;
 }
 .images .leras img{
     float: left;
-    max-width: 65%;
+    max-width: calc(0em + 65%);
     height: auto;
 }
 
@@ -101,8 +111,8 @@ h1 {
 }
 
 .card {
-    width: 30rem;
-    height: 12rem;
+    width: calc(30em + 2vw);
+    height: calc(12em + 2vh);
     display: flex;
     overflow: hidden;
     background: #47555e;
@@ -112,8 +122,8 @@ h1 {
 }
 
 .card img{
-    width: 240px;
-    height: 240px;
+    width: 15rem;
+    height: 15rem;
     margin: 0px;
     object-position: center center;
 }
@@ -221,4 +231,63 @@ footer span a{
 footer span a:hover{
     color: transparent;
     transition: 500ms ease;
+}
+
+@media (max-width: 1135px){
+    .header{
+        justify-content: space-around;
+        padding: 1.2rem 0;
+        height: 20px;
+    }
+    .header .logo img{
+        height: calc(0.5em + 4.5vw);
+        width: auto;
+    }
+
+    h1{
+        
+        font-size: calc(1em + 6vw);
+        line-height: 1em;
+        top: 12%;
+    }
+    .images .ati img{
+        max-width: calc(0.5em + 60%);
+    }
+    .images .leras img{
+        max-width: calc(0.5em + 65%);
+    }
+    .images .ett img{
+        padding-left: calc(2em + 2vw);
+    }
+    .card{
+        width: calc(20em + 10vw);
+        height: calc(6em + 10vh);
+    }
+    .card img{
+        width: calc(8em + 5vw);
+        height: calc(10em + 5vh);
+        margin: 0px;
+        object-position: center center;
+    }
+    .datos{
+        margin-top: 0.5em;
+        width: calc(1em + 5vw);
+        height: calc(1em + 5vh);
+        line-height: 1em;
+    }
+    .card .datos h2{
+        font-size: calc(1em + 1vw);
+    }
+    .card .datos p{
+        font-size: calc(0.5em + 1vw);
+    }
+    .card .datos span{
+        font-size: calc(0.4em + 1vw);
+    }
+    footer li a{
+        font-size: calc(0.5em + 1vw);
+    }
+    .redes span, a{
+        font-size: calc(0.6em + 1vw);
+    }
 }

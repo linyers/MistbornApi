@@ -119,7 +119,7 @@ def main():
     for doc in result:
         _id = doc["_id"]
         name = doc["name"]
-        url_name = "/api/v1.0/characters/" + _id
+        url_name = "/api/v1.0/characters/" + str(_id)
         featured = ", ".join(doc["featured_in"][:3])
         abilities = "Any"
         if len(doc["featured_in"]) > 3:
